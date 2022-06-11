@@ -31,7 +31,7 @@ public:
 	{
 		std::ostringstream strs;
 		strs << m_cost_per_kg;
-		std::string str = std::string(m_product_info.get_info() + ": " + strs.str() + " äåíÿê çà êèëîãðàìì ");
+		std::string str = std::string(m_product_info.get_info() + ": " + strs.str() + " äåíÿê çà êèëîãðàìì");
 		return str;
 	}
 	double get_cost() override
