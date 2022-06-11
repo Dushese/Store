@@ -31,7 +31,7 @@ public:
 	{
 		std::ostringstream strs;
 		strs << m_cost_per_kg;
-		std::string str = std::string(m_product_info.get_info() + ": " + strs.str() + " äåíÿê çà êèëîãğàìì");
+		std::string str = std::string(m_product_info.get_info() + ": " + strs.str() + " Ã¤Ã¥Ã­Ã¿Ãª Ã§Ã  ÃªÃ¨Ã«Ã®Ã£Ã°Ã Ã¬Ã¬ ");
 		return str;
 	}
 	double get_cost() override
@@ -50,7 +50,7 @@ public:
 	{
 		std::ostringstream strs;
 		strs << m_cost_per_one;
-		std::string str = m_product_info.get_info() + ": " + strs.str() + " äåíÿê çà îäíó øò ";
+		std::string str = m_product_info.get_info() + ": " + strs.str() + " Ã¤Ã¥Ã­Ã¿Ãª Ã§Ã  Ã®Ã¤Ã­Ã³ Ã¸Ã² ";
 		return str;
 	}
 	double get_cost() override
