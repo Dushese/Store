@@ -6,12 +6,11 @@
 
 int main()
 {
-	//add some words
 	setlocale(LC_ALL, "Russian");
 	Order order;
 	if (order.empty())
 	{
-		std::cout << "Ïóñòîé!\n";
+		std::cout << "Пусбжбтой!\n";
 	}
 	auto& base = PriceBase::Instance();
 	WeightProduct apple(base.get_product_weight_price("Apple"));
@@ -28,7 +27,7 @@ int main()
 	Ivan.pay_and_recieve_order(order);
 	Ivan.earn_money(500);
 	Ivan.pay_and_recieve_order(order);
-	std::cout << "Çàêàç ïóñò? " << order.empty() << '\n';
+	std::cout << "Заказ пуст? " << order.empty() << '\n';
 	return 0;
 	// add something...
 }
