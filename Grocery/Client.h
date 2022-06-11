@@ -26,7 +26,7 @@ public:
 		if (m_balance.waste_money(order.get_cost()))
 		{
 			order.clear();
-			std::cout << "\nЗаказ успешно оплачен! \n";
+			std::cout << "\nЗаказ успешно оплачен!\n";
 			return true;
 		}
 		else {
