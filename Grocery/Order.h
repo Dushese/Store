@@ -17,6 +17,7 @@ public:
 	}
 	double get_cost()
 	{
+
 		double sum = 0;
 		for (auto& ptr : m_ptr_positions)
 		{

@@ -32,6 +32,7 @@ WeightProduct PriceBase::get_product_weight_price(std::string name)
 }
 
 
+
 AmountProduct PriceBase::get_product_amount_price(std::string name) {
 	auto it = m_products_amount_price.find(name);
 	if (it != m_products_amount_price.end())

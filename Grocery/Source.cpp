@@ -7,23 +7,6 @@
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	/*WeightProduct carr(ProductInfo("морковь"), 13.5);
-	AmountProduct candy(ProductInfo("конфетка"), 5);
-	std::cout << carr.get_info() << candy.get_info() << '\n';
-	AmountPosition candies(candy, 10);
-	WeightPosition carrots(carr, 4.5);
-	std::cout << candies.get_quantity() << ' ' << candies.get_cost() << '\n';
-	std::cout << carrots.get_quantity() << ' ' << carrots.get_cost() << '\n';
-	Order check;
-	check.add_position(candies);
-	check.add_position(carrots);
-	WeightPosition car(carr, 41.5);
-	check.add_position(car);
-	check.get_info();
-	Client Rus;
-	Rus.earn_money(150);
-	std::cout<<Rus.pay_and_recieve_order(check);
-	std::cout << check.empty();*/
 	Order order;
 	if (order.empty())
 	{
@@ -46,4 +29,5 @@ int main()
 	Ivan.pay_and_recieve_order(order);
 	std::cout << "Заказ пуст? " << order.empty() << '\n';
 	return 0;
+	// add something...
 }

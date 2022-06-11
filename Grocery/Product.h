@@ -5,7 +5,7 @@
 
 class ProductInfo {
 public:
-	ProductInfo(const std::string& info) : m_info(info) {}
+	ProductInfo(const std::string& info) : m_info(info){}
 	std::string get_info()
 	{
 		return m_info;
@@ -50,7 +50,7 @@ public:
 	{
 		std::ostringstream strs;
 		strs << m_cost_per_one;
-		std::string str = m_product_info.get_info() + ": " + strs.str() + " деняк за одну шт";
+		std::string str = m_product_info.get_info() + ": " + strs.str() + " деняк за одну шт ";
 		return str;
 	}
 	double get_cost() override
