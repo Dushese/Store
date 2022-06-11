@@ -29,5 +29,4 @@ int main()
 	Ivan.pay_and_recieve_order(order);
 	std::cout << "Заказ пуст? " << order.empty() << '\n';
 	return 0;
-	// add something...
 }
