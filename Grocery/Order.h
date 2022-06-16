@@ -4,7 +4,7 @@
 class Order {
 public:
 	friend class Client;
-	void add_position(Position* pos);
+	void add_position(std::unique_ptr<Position> ptr_pos);
 	double get_cost();
 	void get_info();
 	bool empty()
@@ -12,26 +12,20 @@ public:
 		return m_ptr_positions.empty();
 	}
 private:
-	void clear() { 
-		for (auto& ptr : m_ptr_positions)
-		{
-			//delete ptr;
-		}
-		//m_ptr_positions.clear(); 
-	}
-	std::vector<Position*> m_ptr_positions;
+	void clear() { m_ptr_positions.clear(); }
+	std::vector<std::unique_ptr<Position>> m_ptr_positions;
 };
 
-void Order::add_position(Position* pos) {
-	for (auto& ptr : m_ptr_positions)
+void Order::add_position(std::unique_ptr<Position> ptr_pos) {
+	for (auto& pos : m_ptr_positions)
 	{
-		if (ptr->get_ptr_product()->get_info() == pos->get_ptr_product()->get_info())
+		if (ptr_pos->get_ptr_product()->get_info() == pos->get_ptr_product()->get_info())
 		{
-			ptr = pos;
+			pos = std::move(ptr_pos);
 			return;
 		}
 	}
-	m_ptr_positions.push_back(pos);
+	m_ptr_positions.push_back(std::move(ptr_pos));
 }
 double Order::get_cost()
 {
