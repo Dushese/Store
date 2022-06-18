@@ -5,9 +5,9 @@ class Order {
 public:
 	friend class Client;
 	void add_position(std::unique_ptr<Position> ptr_pos);
-	double get_cost();
-	void get_info();
-	bool empty()
+	double get_cost() const;
+	void get_info()const;
+	bool empty()const
 	{
 		return m_ptr_positions.empty();
 	}
@@ -27,7 +27,7 @@ void Order::add_position(std::unique_ptr<Position> ptr_pos) {
 	}
 	m_ptr_positions.push_back(std::move(ptr_pos));
 }
-double Order::get_cost()
+double Order::get_cost()const
 {
 
 	double sum = 0;
@@ -38,7 +38,7 @@ double Order::get_cost()
 	return sum;
 }
 
-void Order::get_info()
+void Order::get_info()const
 {
 	if (empty())
 	{

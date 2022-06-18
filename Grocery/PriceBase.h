@@ -10,8 +10,8 @@ public:
 		static PriceBase instance; // тут сработает дефолтный конструктор
 		return instance;
 	}
-	WeightProduct get_product_weight_price(std::string name);
-	AmountProduct get_product_amount_price(std::string name);
+	WeightProduct get_product_weight_price(const std::string& name)const;
+	AmountProduct get_product_amount_price(const std::string& name)const;
 protected:
 	PriceBase();
 private:
@@ -21,25 +21,26 @@ private:
 };
 
 
-WeightProduct PriceBase::get_product_weight_price(std::string name)
+WeightProduct PriceBase::get_product_weight_price(const std::string& name) const
 {
 	auto it = m_products_weight_price.find(name);
 	if (it != m_products_weight_price.end())
 	{
 		return it->second;
 	}
-	else throw std::runtime_error("Такого продукта нет!!!\n");
+	throw std::runtime_error("Такого продукта нет!!!\n");
 }
 
 
 
-AmountProduct PriceBase::get_product_amount_price(std::string name) {
+AmountProduct PriceBase::get_product_amount_price(const std::string& name) const
+{
 	auto it = m_products_amount_price.find(name);
 	if (it != m_products_amount_price.end())
 	{
 		return it->second;
 	}
-	else throw std::runtime_error("Такого продукта нет!!!\n");
+	throw std::runtime_error("Такого продукта нет!!!\n");
 }
 
 PriceBase::PriceBase()

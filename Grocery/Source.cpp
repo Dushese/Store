@@ -32,6 +32,7 @@ int main()
 	order.add_position(std::make_unique<WeightPosition>(std::move(pos_nuts)));
 	order.get_info();
 	Ivan.pay_and_recieve_order(order);
-
+	std::cout << "Заказ пуст? " << order.empty() << '\n';
+	Balance a;
 	return 0;
 }

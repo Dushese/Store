@@ -19,8 +19,8 @@ private:
 };
 class Client {
 public:
-	Client() :m_balance(Balance()) {}
-	void earn_money(const double& money) { m_balance.add_money(money); }
+	Client() = default;
+	void earn_money(double money) { m_balance.add_money(money); }
 	bool pay_and_recieve_order(Order& order)
 	{
 		if (m_balance.waste_money(order.get_cost()))
